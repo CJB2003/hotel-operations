@@ -60,13 +60,16 @@ public class Employee {
             payRate *= getRegularHours();
         }
         else if (hoursWorked > 40) {
-            payRate *= getOvertimeHours() + getRegularHours();
+            payRate = (payRate * getRegularHours()) + ((payRate * 1.5) * getOvertimeHours());
         }
         return payRate;
     }
 
     public int getRegularHours() {
-        return hoursWorked * 5;
+        if (hoursWorked <= 40) {
+            return hoursWorked;
+        }
+        return 40;
     }
 
     public int getOvertimeHours() {
