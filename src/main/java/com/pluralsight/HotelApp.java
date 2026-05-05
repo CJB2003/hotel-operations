@@ -23,10 +23,32 @@ public class HotelApp {
             room1.checkOut();
         }
 
-        System.out.println("Is room 1 available? " + room1.isAvailable());
+        System.out.println("Are you an employee? (Y/N)");
+        String checkEmployee = myScanner.nextLine();
 
-        System.out.printf("The total price of your reservation is: $%.2f\n", reservation1.getReservationTotal());
+        if (checkEmployee.equalsIgnoreCase("y")) {
 
-        System.out.printf("Your pay for this week: $%.2f", employee1.getTotalPay());
+            System.out.println("Are you clocking in or out? (1 or 2)");
+            int userInOut = myScanner.nextInt();
+            myScanner.nextLine();
+
+            if (userInOut == 1) {
+
+                System.out.println("What time are you clocking in?");
+                int userTime = myScanner.nextInt();
+                myScanner.nextLine();
+                employee1.punchIn(userTime);
+
+            } else {
+                System.out.println("What time are you clocking out?");
+
+            }
+        }
+
+//        System.out.println("Is room 1 available? " + room1.isAvailable());
+//
+//        System.out.printf("The total price of your reservation is: $%.2f\n", reservation1.getReservationTotal());
+//
+//        System.out.printf("Your pay for this week: $%.2f", employee1.getTotalPay());
     }
 }

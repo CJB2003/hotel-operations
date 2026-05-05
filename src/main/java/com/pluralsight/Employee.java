@@ -6,6 +6,7 @@ public class Employee {
     private String department;
     private double payRate;
     private int hoursWorked;
+    private int time;
 
     public Employee(int employeeId, String name, String department, double payRate, int hoursWorked) {
         this.employeeId = employeeId;
@@ -77,5 +78,23 @@ public class Employee {
             hoursWorked -= 40;
         }
         return 0;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public void punchIn(int time) {
+        this.setTime(time);
+    }
+
+    public void punchOut(int time) {
+        int totalTime = time - this.time;
+        System.out.println("Your end time was: " + totalTime);
+        this.hoursWorked += totalTime;
     }
 }
