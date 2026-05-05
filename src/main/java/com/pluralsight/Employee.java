@@ -75,7 +75,7 @@ public class Employee {
 
     public int getOvertimeHours() {
         if (hoursWorked > 40) {
-            hoursWorked -= 40;
+            return hoursWorked -= 40;
         }
         return 0;
     }
@@ -94,7 +94,8 @@ public class Employee {
 
     public void punchOut(int time) {
         int totalTime = time - this.time;
-        System.out.println("Your end time was: " + totalTime);
+        System.out.println("Your shift hours worked: " + totalTime);
         this.hoursWorked += totalTime;
+        System.out.println("Total hours worked: " + this.hoursWorked);
     }
 }

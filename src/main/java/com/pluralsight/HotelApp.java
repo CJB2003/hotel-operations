@@ -32,16 +32,16 @@ public class HotelApp {
             int userInOut = myScanner.nextInt();
             myScanner.nextLine();
 
+            System.out.println("What time are you clocking in or out?");
+            int userTime = myScanner.nextInt();
+            myScanner.nextLine();
+
             if (userInOut == 1) {
-
-                System.out.println("What time are you clocking in?");
-                int userTime = myScanner.nextInt();
-                myScanner.nextLine();
                 employee1.punchIn(userTime);
-
+                System.out.println("Clocked in at " + userTime + ":00");
             } else {
-                System.out.println("What time are you clocking out?");
-
+                employee1.punchOut(userTime);
+                System.out.println("Clocked out at " + userTime + ":00. Total hours: " + employee1.getHoursWorked());
             }
         }
 
