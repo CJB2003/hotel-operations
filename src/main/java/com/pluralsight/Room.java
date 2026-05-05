@@ -52,5 +52,19 @@ public class Room {
         }
         return available;
     }
-    
+
+    public void checkIn() {
+        this.setDirty(true);
+        this.setOccupied(true);
+        System.out.println("You're checked in!");
+    }
+
+    public void checkOut() {
+        this.setOccupied(false);
+        cleanRoom();
+        System.out.println("We hope you enjoyed your stay! You're checked out!");
+    }
+    public void cleanRoom() {
+        this.setDirty(false);
+    }
 }

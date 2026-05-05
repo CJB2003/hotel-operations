@@ -76,6 +76,6 @@ public class Employee {
         if (hoursWorked > 40) {
             hoursWorked -= 40;
         }
-        return hoursWorked;
+        return 0;
     }
 }
