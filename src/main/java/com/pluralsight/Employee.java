@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalDateTime;
+
 public class Employee {
     private int employeeId;
     private String name;
@@ -97,5 +99,16 @@ public class Employee {
         System.out.println("Your shift hours worked: " + totalTime);
         this.hoursWorked += totalTime;
         System.out.println("Total hours worked: " + this.hoursWorked);
+    }
+
+    public void punchIn() {
+        LocalDateTime lDT = LocalDateTime.now();
+        this.time = lDT.getHour();
+    }
+
+    public void punchOut() {
+        LocalDateTime lDT = LocalDateTime.now();
+        int totalTime = lDT.getHour() - this.time;
+        this.hoursWorked += totalTime;
     }
 }
