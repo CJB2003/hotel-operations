@@ -50,8 +50,8 @@ public class Reservation {
         double price = getPrice();
         if (isWeekend) {
             price = price * 0.1 + price;
-            price *= numberOfNights;
         }
+        price *= numberOfNights;
         return price;
     }
 }
