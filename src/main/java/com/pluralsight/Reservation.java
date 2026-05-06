@@ -11,39 +11,15 @@ public class Reservation {
         this.isWeekend = isWeekend;
     }
 
-    public String getRoomType() {
-        return roomType;
-    }
-
-    public void setRoomType(String roomType) {
-        this.roomType = roomType;
-    }
-
     public double getPrice() {
         double price = 0;
-        if (roomType.equalsIgnoreCase("King")) {
+        if (this.roomType.equalsIgnoreCase("King")) {
             price = 139.00;
         }
-        else if(roomType.equalsIgnoreCase("Double")) {
+        else if(this.roomType.equalsIgnoreCase("Double")) {
             price = 124.00;
         }
         return price;
-    }
-
-    public int getNumberOfNights() {
-        return numberOfNights;
-    }
-
-    public void setNumberOfNights(int numberOfNights) {
-        this.numberOfNights = numberOfNights;
-    }
-
-    public boolean isWeekend() {
-        return isWeekend;
-    }
-
-    public void setIsWeekend(boolean weekend) {
-        isWeekend = weekend;
     }
 
     public double getReservationTotal() {

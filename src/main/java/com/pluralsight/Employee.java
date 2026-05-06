@@ -18,18 +18,6 @@ public class Employee {
         this.hoursWorked = hoursWorked;
     }
 
-    public int getEmployeeId() {
-        return employeeId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
     public double getPayRate() {
         return payRate;
     }
@@ -59,11 +47,7 @@ public class Employee {
         return 0;
     }
 
-    public int getTime() {
-        return time;
-    }
-
-    public void setTime(int time) {
+    private void setTime(int time) {
         this.time = time;
     }
 
@@ -90,5 +74,14 @@ public class Employee {
         this.hoursWorked += totalTime;
         System.out.println("Total time worked: " + totalTime);
         System.out.println("Hours worked this week: " + this.hoursWorked);
+    }
+
+    public void punchTimeCard() {
+        if (time == 0) {
+            punchIn();
+        } else {
+            punchOut();
+            time = 0;
+        }
     }
 }
