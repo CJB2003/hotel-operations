@@ -17,7 +17,7 @@ class EmployeeTest {
     }
 
     /*
-    Testing punchOut by setting start time with punchIn and punching out
+    Testing punchOut by setting a start time with punchIn() and punching out
     to calculate total hours worked for the week and also hours worked during the shift
      */
     @Test
