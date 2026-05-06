@@ -33,14 +33,14 @@ public class Hotel {
 
     public boolean bookRoom(int numberOfRooms, boolean isSuite) {
         if (isSuite) {
-            if (getAvailableSuites() >= numberOfRooms) {
+            if (this.getAvailableSuites() >= this.numberOfRooms) {
                 bookedSuites += numberOfRooms;
                 return true;
             } else {
                 return false;
             }
         } else {
-            if (getAvailableRooms() >= numberOfRooms) {
+            if (this.getAvailableRooms() >= this.numberOfRooms) {
                 bookedBasicRooms += numberOfRooms;
                 return true;
             }

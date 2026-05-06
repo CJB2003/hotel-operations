@@ -47,12 +47,17 @@ public class Employee {
         return 0;
     }
 
+    public int getTime() {
+        return time;
+    }
+
     private void setTime(int time) {
         this.time = time;
     }
 
     public void punchIn(int time) {
         this.setTime(time);
+        System.out.println("You've clocked in at: " + time);
     }
 
     public void punchOut(int time) {
@@ -79,9 +84,11 @@ public class Employee {
     public void punchTimeCard() {
         if (time == 0) {
             punchIn();
+            System.out.println("You are clocked in!");
         } else {
             punchOut();
             time = 0;
+            System.out.println("You are clocked out!");
         }
     }
 }
