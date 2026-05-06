@@ -22,50 +22,27 @@ public class Employee {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
     public double getPayRate() {
         return payRate;
-    }
-
-    public void setPayRate(double payRate) {
-        this.payRate = payRate;
     }
 
     public int getHoursWorked() {
         return hoursWorked;
     }
 
-    public void setHoursWorked(int hoursWorked) {
-        this.hoursWorked = hoursWorked;
-    }
-
+    //Fixed this, before my payRate was being overwritten, but now it should just return a total pay
     public double getTotalPay() {
-        if (hoursWorked <= 40) {
-            payRate *= getRegularHours();
-        }
-        else if (hoursWorked > 40) {
-            payRate = (payRate * getRegularHours()) + ((payRate * 1.5) * getOvertimeHours());
-        }
-        return payRate;
+        double regularPay = payRate * this.getRegularHours();
+        double overTimePay = (payRate * 1.5) * this.getOvertimeHours();
+        return regularPay + overTimePay;
     }
 
     public int getRegularHours() {
@@ -77,7 +54,7 @@ public class Employee {
 
     public int getOvertimeHours() {
         if (hoursWorked > 40) {
-            return hoursWorked -= 40;
+            return hoursWorked - 40;
         }
         return 0;
     }
@@ -104,11 +81,14 @@ public class Employee {
     public void punchIn() {
         LocalDateTime lDT = LocalDateTime.now();
         this.time = lDT.getHour();
+        System.out.println("Your start time: " + this.time);
     }
 
     public void punchOut() {
         LocalDateTime lDT = LocalDateTime.now();
         int totalTime = lDT.getHour() - this.time;
         this.hoursWorked += totalTime;
+        System.out.println("Total time worked: " + totalTime);
+        System.out.println("Hours worked this week: " + this.hoursWorked);
     }
 }

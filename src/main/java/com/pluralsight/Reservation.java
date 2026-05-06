@@ -42,16 +42,15 @@ public class Reservation {
         return isWeekend;
     }
 
-    public void setWeekend(boolean weekend) {
+    public void setIsWeekend(boolean weekend) {
         isWeekend = weekend;
     }
 
     public double getReservationTotal() {
-        double price = getPrice();
-        if (isWeekend) {
+        double price = getPrice() * this.numberOfNights;
+        if (this.isWeekend) {
             price = price * 0.1 + price;
         }
-        price *= numberOfNights;
         return price;
     }
 }

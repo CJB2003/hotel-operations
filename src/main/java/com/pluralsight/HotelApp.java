@@ -26,10 +26,9 @@ public class HotelApp {
         boolean maxBook = hotel.bookRoom(50, true);
         System.out.println("Can I book 50 rooms? " + maxBook);
 
-//        employee1.punchIn();
-//        employee1.punchOut();
-//        System.out.println(employee1.getHoursWorked());
-//
+        employee1.punchIn();
+        employee1.punchOut();
+
 //        System.out.println("Welcome BNY Hotel, would you like to check in? (Y/N)");
 //        String checkIn = myScanner.nextLine();
 //        if (checkIn.equalsIgnoreCase("y")) {
